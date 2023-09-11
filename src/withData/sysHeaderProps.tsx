@@ -23,8 +23,13 @@ const homeRoute = router.getRoutes().find((route) => route.name === '主页')
 
 console.assert(homeRoute, '主页路由不存在')
 
-export default {
+const menuProps = reactive({
   mode: 'horizontal',
   options: generateMenu(homeRoute!),
-  value: computed(() => router.currentRoute.value.name),
-} satisfies ExtractPublicPropTypes<InstanceType<typeof SysHeader>['$props']>
+  value: '',
+} satisfies ExtractPublicPropTypes<InstanceType<typeof SysHeader>['$props']>)
+
+watchEffect(() => {
+  menuProps.value = router.currentRoute.value.name as string
+})
+export default menuProps

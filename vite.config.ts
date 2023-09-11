@@ -13,10 +13,11 @@ import AutoImport from 'unplugin-auto-import/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // @ts-ignore
 import { openCodeServer, addCodeLocation } from '@guijixing/vue-code-link'
-import VueMacros from 'unplugin-vue-macros/vite'
 // @ts-ignore
+import VueMacros from 'unplugin-vue-macros/vite'
 import UnpluginSvgComponent from 'unplugin-svg-component/vite'
 import UnoCSS from 'unocss/vite'
+// @ts-ignore
 import UnpluginGlob from 'unplugin-glob/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Icons from 'unplugin-icons/vite'
@@ -25,6 +26,7 @@ import { dynamicBase } from 'vite-plugin-dynamic-base'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import dts from 'vite-plugin-dts'
+import Markdown from 'vite-plugin-md'
 // import ConfigPlugin from 'unplugin-config/vite'
 // vite.config.js
 // https://vitejs.dev/config/
@@ -35,6 +37,7 @@ export default defineConfig({
     target: 'esnext',
   },
   plugins: [
+    Markdown(),
     dts({ rollupTypes: true }),
     ...(process.env.NODE_ENV === 'development'
       ? [addCodeLocation(), openCodeServer()]
@@ -117,7 +120,7 @@ export default defineConfig({
 
       plugins: {
         vue: Vue({
-          include: [/\.vue$/, /\.setup\.[cm]?[jt]sx?$/],
+          include: [/\.vue$/, /\.setup\.[cm]?[jt]sx?$/, /.md$/],
           reactivityTransform: resolve(__dirname, 'src'),
           template: {
             compilerOptions: {

@@ -17,6 +17,10 @@ import { CSSProperties } from 'vue'
 import { useDragEvent, useDragEventOptions } from '../hooks'
 
 const themeVars = useThemeVars()
+type DragEventOptions =
+  // | useDragEventOptions
+  // boolean
+  object
 
 const {
   direction = 'none',
@@ -28,8 +32,7 @@ const {
   direction?: 'horizontal' | 'vertical' | 'none'
   hoverable?: boolean
   thickness?: string
-  // useDrag?: useDragEventOptions | boolean
-  useDrag?: boolean | Record<string, any>
+  useDrag?: DragEventOptions
   style?: CSSProperties
 }>()
 const el = useCurrentElement<HTMLElement>()
