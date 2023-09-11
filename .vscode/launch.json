@@ -1,0 +1,62 @@
+{
+    "compounds": [
+        {
+            "configurations": [
+                "Run Script: dev",
+                "Launch Microsoft Edge in headless mode",
+                "Open Edge DevTools"
+            ],
+            "name": "Launch Edge Headless and attach DevTools"
+        },
+        {
+            "configurations": [
+                "Launch Microsoft Edge",
+                "Open Edge DevTools"
+            ],
+            "name": "Launch Edge and attach DevTools"
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Launch Microsoft Edge",
+            "presentation": {
+                "hidden": true
+            },
+            "request": "launch",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ],
+            "type": "msedge",
+            "url": "http://localhost:5173"
+        },
+        {
+            "name": "Launch Microsoft Edge in headless mode",
+            "presentation": {
+                "hidden": true
+            },
+            "request": "launch",
+            "runtimeArgs": [
+                "--headless",
+                "--remote-debugging-port=9222"
+            ],
+            "type": "msedge",
+            "url": "http://localhost:5173"
+        },
+        {
+            "name": "Open Edge DevTools",
+            "presentation": {
+                "hidden": true
+            },
+            "request": "attach",
+            "type": "vscode-edge-devtools.debug",
+            "url": "http://localhost:5173"
+        },
+        {
+            "command": "pnpm run dev",
+            "cwd": "${workspaceFolder}",
+            "name": "Run Script: dev",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
+}

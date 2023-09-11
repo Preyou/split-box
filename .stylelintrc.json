@@ -1,0 +1,7 @@
+{
+    "extends": [
+        "stylelint-config-recommended-vue",
+        "stylelint-prettier/recommended",
+        "stylelint-config-rational-order"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "guijixing",
+        "Tagify",
+        "taiyang",
+        "yueliang"
+    ],
+    "path-intellisense.mappings": {
+        "@": "${workspaceFolder}/src",
+        "@g": "${workspaceFolder}/globals",
+        "@lib": "${workspaceFolder}/lib",
+    },
+    "typescript.tsdk": "node_modules/typescript/lib"
+}
