@@ -44,19 +44,14 @@
     "public"
   ],
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "globals/**/*.ts",
-    "globals/**/*.tsx",
-    "globals/**/*.vue",
-    "lib/**/*.ts",
-    "lib/**/*.tsx",
-    "lib/**/*.vue",
+    "src",
+    "globals",
+    "lib",
     "types/**/*.d.ts",
     "src/env.d.ts",
     "vite.config.ts",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "shims.d.ts"
   ],
   "vueCompilerOptions": {
     "plugins": [

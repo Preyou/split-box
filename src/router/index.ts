@@ -6,6 +6,6 @@ export default createRouter({
   routes: [
     ...routes,
     { path: '/:pathMatch(.*)*', redirect: '/' },
-    { path: '/', redirect: '/TheHome' },
+    { path: '/', redirect: '/主页' },
   ],
 })

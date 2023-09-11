@@ -7,7 +7,7 @@ module.exports = defineConfig({
   overrides: [
     {
       extends: ['plugin:@typescript-eslint/recommended'],
-      files: ['./**/*.{js,jsx,ts,tsx,vue}', './docs/.vuepress/config.ts'],
+      files: ['./**/*.{js,jsx,ts,tsx,vue,md}'],
       parser: 'vue-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser',

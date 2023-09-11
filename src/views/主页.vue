@@ -25,7 +25,9 @@ import sysHeaderProps from '@/withData/sysHeaderProps'
 import sysMate from '@/components/systemEffect/SysMate.vue'
 
 definePage({
-  name: 'home',
-  // redirect: '/home',
+  name: '主页',
+  redirect: {
+    name: '概述',
+  },
 })
 </script>

@@ -4,7 +4,9 @@
 
 <script setup lang="ts">
 definePage({
-  name: '功能1',
-  redirect: './test1',
+  name: '示例',
+  redirect: {
+    name: '示例1',
+  },
 })
 </script>

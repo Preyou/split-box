@@ -17,10 +17,6 @@ import SplitBox from '@lib/index.js'
 import '@lib/style.css'
 
 definePage({
-  name: 'view',
-  path: '/view',
-  meta: {
-    title: '基于双向绑定的相机同步',
-  },
+  name: '示例1',
 })
 </script>
