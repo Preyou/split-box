@@ -60,7 +60,7 @@ export default defineConfig({
       plugins: {
         vue: Vue({
           include: [/\.vue$/, /\.setup\.[cm]?[jt]sx?$/],
-          reactivityTransform: resolve(__dirname, 'src'),
+          reactivityTransform: resolve(__dirname, 'components'),
           template: {
             compilerOptions: {
               nodeTransforms: [],
@@ -73,7 +73,7 @@ export default defineConfig({
     }),
 
     Components({
-      dts: '../types/auto/component.d.ts',
+      dts: './types/auto/component.d.ts',
       // dirs: ['src/components/system/*.vue'],
       // extensions: ['vue', 'jsx', 'tsx', 'js', 'ts'],
       // Glob patterns to match file names to be detected as components.
@@ -127,7 +127,6 @@ export default defineConfig({
             'useNotification',
             'useLoadingBar',
           ],
-          '/src/utils/initConfig.ts': ['sysConfig', 'theme'],
           // '[package-name]': [
           //   '[import-names]',
           //   // alias
@@ -136,7 +135,7 @@ export default defineConfig({
         },
       ],
       // 可以选择auto-import.d.ts生成的位置，使用ts建议设置为'src/auto-import.d.ts'
-      dts: '../types/auto/auto-import.d.ts',
+      dts: './types/auto/auto-import.d.ts',
       eslintrc: {
         enabled: false, // Default `false`
         filepath: '../.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
@@ -147,6 +146,6 @@ export default defineConfig({
 
   resolve: {
     conditions: ['default'],
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.md'],
   },
 })

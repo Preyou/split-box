@@ -1,82 +1,11 @@
 <template>
   <div class="win-box relative h-full w-full overflow-hidden">
-    <!-- <hover-line
-      v-if="resizeable === true || resizeable === 'top'"
-      class="top-hover-line absolute z-999"
-      :class="{
-        'cursor-ns-resize': cursorStyle === 'ew-ns',
-        'cursor-row-resize': cursorStyle === 'row-col',
-      }"
-      direction="horizontal"
-      :thickness="`${thickness}px`"
-      :use-drag="{
-        container: containerRef,
-      }"
-      @drag="
-        ({ moveX }) => {
-          moveX.value = 0
-        }
-      "
-    />
-    <hover-line
-      v-if="resizeable === true || resizeable === 'right'"
-      class="right-hover-line absolute"
-      :class="{
-        'cursor-ew-resize': cursorStyle === 'ew-ns',
-        'cursor-col-resize': cursorStyle === 'row-col',
-      }"
-      direction="vertical"
-      :thickness="`${thickness}px`"
-      :use-drag="{
-        container: containerRef,
-      }"
-      @drag="
-        ({ moveY }) => {
-          moveY.value = 0
-        }
-      "
-    />
-    <hover-line
-      v-if="resizeable === true || resizeable === 'bottom'"
-      class="bottom-hover-line absolute"
-      :class="{
-        'cursor-ns-resize': cursorStyle === 'ew-ns',
-        'cursor-row-resize': cursorStyle === 'row-col',
-      }"
-      direction="horizontal"
-      :thickness="`${thickness}px`"
-      :use-drag="{
-        container: containerRef,
-      }"
-      @drag="
-        ({ moveX }) => {
-          moveX.value = 0
-        }
-      "
-    />
-    <hover-line
-      v-if="resizeable === true || resizeable === 'left'"
-      class="left-hover-line absolute"
-      :class="{
-        'cursor-ew-resize': cursorStyle === 'ew-ns',
-        'cursor-col-resize': cursorStyle === 'row-col',
-      }"
-      direction="vertical"
-      :thickness="`${thickness}px`"
-      :use-drag="{
-        container: containerRef,
-      }"
-      @drag="
-        ({ moveY }) => {
-          moveY.value = 0
-        }
-      "
-    /> -->
     <un-flex
+      v-bind="$attrs"
       ref="containerRef"
       :class="{
-        'flex-row': direction === 'horizontal',
-        'flex-col': direction === 'vertical',
+        'flex-row': direction === 'row',
+        'flex-col': direction === 'column',
       }"
       class="relative h-full w-full [&>*]:h-full [&>*]:w-full [&>*]:flex-auto"
     >
@@ -87,9 +16,7 @@
       v-bind="bind"
       :key="i"
       class="absolute"
-      :class="[
-        direction === 'vertical' ? 'cursor-row-resize' : 'cursor-col-resize',
-      ]"
+      :class="[direction === 'row' ? 'cursor-row-resize' : 'cursor-col-resize']"
     />
   </div>
 </template>
@@ -106,28 +33,18 @@ import HoverLine from './HoverLine.vue'
 
 const thickness = 5
 
-const {
-  resizeable = false,
-  cursorStyle = 'ew-ns',
-  defaultDirection,
-} = $defineProps<{
-  resizeable?: boolean | 'left' | 'right' | 'top' | 'bottom'
-  cursorStyle?: 'ew-ns' | 'row-col'
-  defaultDirection?: 'horizontal' | 'vertical'
-}>()
-
-const { direction } = defineModels<{
-  direction?: 'horizontal' | 'vertical'
-}>()
-
-direction.value ??= defaultDirection
-
 type HoverLineProps = ExtractPublicPropTypes<
   InstanceType<typeof HoverLine>['$props']
 >
 
 const containerRef = shallowRef<HTMLElement>()
 const hoverLineArr = shallowRef<HoverLineProps[]>([])
+const direction = computed(() => {
+  if (containerRef.value) {
+    return getComputedStyle(containerRef.value).flexDirection
+  }
+  return 'none'
+})
 
 onMounted(() => {
   containerRef.value!.style.setProperty(
@@ -202,7 +119,7 @@ function getBounding(node?: HTMLElement) {
 function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
   let left = 0
   let top = 0
-  if (direction.value === 'vertical') {
+  if (direction.value === 'column') {
     top -= thickness / 2
   } else {
     left -= thickness / 2
@@ -214,7 +131,7 @@ function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
       const nextNode = nodeList[i + 1]
       const rect = node.getBoundingClientRect()
 
-      if (direction.value === 'vertical') {
+      if (direction.value === 'column') {
         top += rect.height
       } else {
         left += rect.width
@@ -253,13 +170,13 @@ function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
         watchEffect(() => {
           node.style.setProperty(
             'width',
-            direction.value === 'vertical'
+            direction.value === 'column'
               ? '100%'
               : `calc((var(${moveWidthCssVar}) + var(${selfWidthCssVar}) - var(${lastWidthCssVar})) / var(${containerWCssVar}) * 100% )`
           )
           node.style.setProperty(
             'height',
-            direction.value === 'vertical'
+            direction.value === 'column'
               ? `calc((var(${moveHeightCssVar}) + var(${selfHeightCssVar}) - var(${lastHeightCssVar})) / var(${containerHCssVar}) * 100% )`
               : '100%'
           )
@@ -271,7 +188,7 @@ function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
       let maxY = 0
 
       return {
-        direction: direction.value === 'vertical' ? 'horizontal' : 'vertical',
+        direction: direction.value === 'column' ? 'row' : 'column',
         hoverable: true,
         thickness: `${thickness}px`,
         style: {
@@ -338,7 +255,7 @@ function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
             }
             case 'dragging':
             default:
-              if (direction.value === 'vertical') {
+              if (direction.value === 'column') {
                 moveX.value = 0
 
                 if (moveY.value < minY) {
@@ -376,12 +293,12 @@ function reset() {
 onMounted(() => {
   const { width, height } = useElementSize(containerRef)
   watch([direction, width], () => {
-    if (direction.value !== 'vertical') {
+    if (direction.value !== 'column') {
       reset()
     }
   })
   watch([direction, height], () => {
-    if (direction.value === 'vertical') {
+    if (direction.value === 'column') {
       reset()
     }
   })

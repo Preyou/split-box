@@ -6,9 +6,9 @@
     <n-layout-header bordered class="flex-none">
       <sys-header v-bind="sysHeaderProps">
         <template #logo>
-          <i-ion-accessibility />
+          <i-ph-square-split-horizontal-fill />
         </template>
-        <template #title> 标题 </template>
+        <template #title> split-box </template>
         <template #mate>
           <sys-mate />
         </template>

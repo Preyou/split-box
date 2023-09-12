@@ -41,7 +41,7 @@
     "components",
     "hooks",
     "index.ts",
-    "../types/**/*.d.ts"
+    "./types/**/*.d.ts"
   ],
   "vueCompilerOptions": {
     "plugins": [

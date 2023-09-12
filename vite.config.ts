@@ -37,7 +37,6 @@ export default defineConfig({
     target: 'esnext',
   },
   plugins: [
-    Markdown(),
     dts({ rollupTypes: true }),
     ...(process.env.NODE_ENV === 'development'
       ? [addCodeLocation(), openCodeServer()]
@@ -71,7 +70,6 @@ export default defineConfig({
       // dynamic load resources on index.html, default false. maybe change default true
       transformIndexHtml: false,
     }),
-    VueDevTools(),
     UnoCSS(),
     Icons({ autoInstall: true, compiler: 'vue3', jsx: 'preact' }),
     VueRouter({
@@ -211,6 +209,8 @@ export default defineConfig({
         globalsPropValue: 'readonly', // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
     }),
+    Markdown(),
+    // VueDevTools(),
   ],
 
   resolve: {
@@ -219,7 +219,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'), // 路径别名
       '@g': resolve(__dirname, 'globals'), // 路径别名
-      '@lib': resolve(__dirname, 'lib/dist'), // 路径别名
+      '@lib': resolve(__dirname, 'lib'), // 路径别名
     },
   },
 })

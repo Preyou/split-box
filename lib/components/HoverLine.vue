@@ -3,8 +3,8 @@
     class="drag-none hover-line"
     :class="{
       'hover-line-hover': hoverable,
-      'hover-line-horizontal': direction === 'horizontal',
-      'hover-line-vertical': direction === 'vertical',
+      'hover-line-horizontal': direction === 'row',
+      'hover-line-vertical': direction === 'column',
     }"
     :style="style"
   />
@@ -17,10 +17,6 @@ import { CSSProperties } from 'vue'
 import { useDragEvent, useDragEventOptions } from '../hooks'
 
 const themeVars = useThemeVars()
-type DragEventOptions =
-  // | useDragEventOptions
-  // boolean
-  object
 
 const {
   direction = 'none',
@@ -29,10 +25,10 @@ const {
   useDrag = true,
   style = {},
 } = $defineProps<{
-  direction?: 'horizontal' | 'vertical' | 'none'
+  direction?: 'row' | 'column' | 'none'
   hoverable?: boolean
   thickness?: string
-  useDrag?: DragEventOptions
+  useDrag?: useDragEventOptions
   style?: CSSProperties
 }>()
 const el = useCurrentElement<HTMLElement>()
