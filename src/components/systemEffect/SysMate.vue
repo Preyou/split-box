@@ -16,7 +16,13 @@
 </template>
 
 <script setup lang="ts">
-import useSysStore from '@/stores/sysStore'
+import { useDark } from '@vueuse/core'
 
-const { isDark } = $(useSysStore())
+const isDark = useDark()
+
+// watchEffect(() => {
+//   return isDark.value
+//     ? import('@/asset/markdown-css/drake-dark.css')
+//     : import('@/asset/markdown-css/drake-light.css')
+// })
 </script>

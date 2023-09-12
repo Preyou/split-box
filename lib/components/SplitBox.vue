@@ -7,7 +7,7 @@
         'flex-row': direction === 'row',
         'flex-col': direction === 'column',
       }"
-      class="relative h-full w-full [&>*]:h-full [&>*]:w-full [&>*]:flex-auto"
+      class="[&>*]:box-border] relative h-full w-full [&>*]:h-full [&>*]:w-full [&>*]:flex-auto"
     >
       <slot />
     </un-flex>
@@ -16,7 +16,9 @@
       v-bind="bind"
       :key="i"
       class="absolute"
-      :class="[direction === 'row' ? 'cursor-row-resize' : 'cursor-col-resize']"
+      :class="[
+        direction === 'column' ? 'cursor-row-resize' : 'cursor-col-resize',
+      ]"
     />
   </div>
 </template>

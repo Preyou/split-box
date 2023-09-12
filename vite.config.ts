@@ -27,6 +27,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import dts from 'vite-plugin-dts'
 import Markdown from 'vite-plugin-md'
+import { code, meta, link } from 'md-powerpack'
 // import ConfigPlugin from 'unplugin-config/vite'
 // vite.config.js
 // https://vitejs.dev/config/
@@ -81,7 +82,7 @@ export default defineConfig({
       // allowed extensions for components to be considered as pages
       // can also be a suffix: e.g. `.page.vue` will match `home.page.vue`
       // but remove it from the route path
-      extensions: ['.vue'],
+      extensions: ['.vue', '.md'],
 
       // list of glob files to exclude from the routes generation
       // e.g. ['**/__*'] will exclude all files and folders starting with `__`
@@ -141,7 +142,8 @@ export default defineConfig({
     Components({
       dts: './types/auto/component.d.ts',
       // dirs: ['src/components/system/*.vue'],
-      // extensions: ['vue', 'jsx', 'tsx', 'js', 'ts'],
+      extensions: ['vue', 'tsx', 'ts', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.tsx?$/, /\.jsx?$/],
       // Glob patterns to match file names to be detected as components.
       // When specified, the `dirs` and `extensions` options will be ignored.
       // globs: ['src/components/system/*.vue', 'src/utils/components/*.vue'],
@@ -209,7 +211,9 @@ export default defineConfig({
         globalsPropValue: 'readonly', // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
     }),
-    Markdown(),
+    Markdown({
+      builders: [code(), meta(), link()],
+    }),
     // VueDevTools(),
   ],
 

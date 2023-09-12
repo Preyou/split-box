@@ -1,3 +1,5 @@
+<g-markdown-theme />
+
 # split-box
 
 可能是用起来最简单的分屏组件

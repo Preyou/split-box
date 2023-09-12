@@ -5,6 +5,7 @@
     :date-locale="dateZhCN"
     :theme="isDark ? darkTheme : null"
     :theme-overrides="theme"
+    :hljs="hljs"
   >
     <n-global-style />
     <n-theme-editor>
@@ -18,8 +19,13 @@
 </template>
 <script lang="ts" setup>
 import { zhCN, dateZhCN, darkTheme } from 'naive-ui'
+import { useDark } from '@vueuse/core'
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
 import { theme } from '@/utils/initConfig'
-import useSysStore from '@/stores/sysStore'
 
-const { isDark } = $(useSysStore())
+// Then register the languages you need
+hljs.registerLanguage('javascript', javascript)
+
+const isDark = useDark()
 </script>
