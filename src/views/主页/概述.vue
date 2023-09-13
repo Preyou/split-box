@@ -1,13 +1,9 @@
 <template>
   <split-box>
-    <read-me class="min-w-100 p-4" />
-    <split-box class="flex-col">
-      <div class="bg-blue-500" />
-      <split-box>
-        <div class="bg-red-500" />
-        <div class="bg-green-500" />
-      </split-box>
-    </split-box>
+    <n-scrollbar class="h-full">
+      <read-me class="min-w-100 p-4" />
+    </n-scrollbar>
+    <vue-comp />
   </split-box>
 </template>
 
@@ -18,6 +14,7 @@ import ReadMe from '@lib/README.md'
 
 import SplitBox from '@headerless/split-box'
 import '@headerless/split-box/style.css'
+import VueComp from '@/samples/概述.vue'
 // import ReadMe from '@headerless/split-box/README.md'
 
 definePage({

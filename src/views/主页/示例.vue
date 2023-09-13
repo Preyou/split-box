@@ -6,7 +6,7 @@
 definePage({
   name: '示例',
   redirect: {
-    name: '示例1',
+    name: '左右分屏',
   },
 })
 </script>

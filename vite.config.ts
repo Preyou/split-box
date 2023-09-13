@@ -28,17 +28,19 @@ import VueRouter from 'unplugin-vue-router/vite'
 import dts from 'vite-plugin-dts'
 import Markdown from 'vite-plugin-md'
 import { code, meta, link } from 'md-powerpack'
+import MarkdownItHighlightjs from 'markdown-it-highlightjs'
 // import ConfigPlugin from 'unplugin-config/vite'
 // vite.config.js
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/__dynamic_base__/' : '/',
+  // base: process.env.NODE_ENV === 'production' ? '/__dynamic_base__/' : '/',
+  base: './',
   envDir: './env',
   build: {
     target: 'esnext',
   },
   plugins: [
-    dts({ rollupTypes: true }),
+    // dts({ rollupTypes: true }),
     ...(process.env.NODE_ENV === 'development'
       ? [addCodeLocation(), openCodeServer()]
       : []),
@@ -212,7 +214,16 @@ export default defineConfig({
       },
     }),
     Markdown({
-      builders: [code(), meta(), link()],
+      markdownItOptions: {
+        html: true,
+        linkify: true,
+        typographer: true,
+      },
+      markdownItSetup(md) {
+        // add anchor links to your H[x] tags
+        // add code syntax highlighting with Prism
+        md.use(MarkdownItHighlightjs)
+      },
     }),
     // VueDevTools(),
   ],

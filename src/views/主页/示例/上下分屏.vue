@@ -8,10 +8,10 @@
 <script setup lang="ts">
 import SplitBox from '@headerless/split-box'
 import '@headerless/split-box/style.css'
-import VueComp from '@/samples/左右分屏.vue'
-import code from '@/samples/左右分屏.vue?raw'
+import VueComp from '@/samples/上下分屏.vue'
+import code from '@/samples/上下分屏.vue?raw'
 
 definePage({
-  name: '左右分屏',
+  name: '上下分屏',
 })
 </script>

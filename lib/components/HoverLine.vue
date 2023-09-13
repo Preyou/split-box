@@ -1,6 +1,6 @@
 <template>
   <div
-    class="drag-none hover-line"
+    class="drag-none hover-line z-9999"
     :class="{
       'hover-line-hover': hoverable,
       'hover-line-horizontal': direction === 'row',
