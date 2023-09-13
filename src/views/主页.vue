@@ -4,7 +4,10 @@
     content-style="display:flex;flex-direction: column;"
   >
     <n-layout-header bordered class="flex-none">
-      <sys-header v-bind="sysHeaderProps">
+      <sys-header
+        v-bind="sysHeaderProps"
+        :value="$router.currentRoute.value.name"
+      >
         <template #logo>
           <i-ph-square-split-horizontal-fill />
         </template>
