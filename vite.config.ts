@@ -38,6 +38,7 @@ export default defineConfig({
   envDir: './env',
   build: {
     target: 'esnext',
+    outDir: 'split-box',
   },
   plugins: [
     // dts({ rollupTypes: true }),
@@ -67,14 +68,18 @@ export default defineConfig({
       // Set `false` to disable.
       dts: './types/auto/glob', // boolean or string
     }),
-    dynamicBase({
-      // dynamic public path var string, default window.__dynamic_base__
-      publicPath: 'window.__dynamic_base__',
-      // dynamic load resources on index.html, default false. maybe change default true
-      transformIndexHtml: false,
-    }),
+    // dynamicBase({
+    //   // dynamic public path var string, default window.__dynamic_base__
+    //   publicPath: 'window.__dynamic_base__',
+    //   // dynamic load resources on index.html, default false. maybe change default true
+    //   transformIndexHtml: false,
+    // }),
     UnoCSS(),
-    Icons({ autoInstall: true, compiler: 'vue3', jsx: 'preact' }),
+    Icons({
+      autoInstall: false,
+      compiler: 'vue3',
+      jsx: 'preact',
+    }),
     VueRouter({
       // Folder(s) to scan for vue components and generate routes. Can be a string, or
       // an object, or an array of those. Each option allows to override global options.
@@ -155,7 +160,9 @@ export default defineConfig({
         NaiveUiResolver(),
         VueUseComponentsResolver(),
         VueUseDirectiveResolver(),
-        IconsResolver({ prefix: 'i' }),
+        IconsResolver({
+          prefix: 'i',
+        }),
         {
           type: 'component',
           resolve: (name) => {
