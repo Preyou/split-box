@@ -42,14 +42,16 @@
     app.component('SplitBox', SplitBox)
     ```
 
+    在SFC中使用
+
     ```html
     <!-- 在SFC中使用 -->
     <template>
         <split-box class="flex-col">
             <div class="bg-blue-500" />
             <split-box>
-            <div class="bg-red-500" />
-            <div class="bg-green-500" />
+                <div class="bg-red-500" />
+                <div class="bg-green-500" />
             </split-box>
         </split-box>
     </template>
@@ -63,8 +65,8 @@
         <split-box class="flex-col">
             <div class="bg-blue-500" />
             <split-box>
-            <div class="bg-red-500" />
-            <div class="bg-green-500" />
+                <div class="bg-red-500" />
+                <div class="bg-green-500" />
             </split-box>
         </split-box>
     </template>

@@ -19,17 +19,12 @@ function generateMenu(route: RouteRecordRaw): NaiveUI.MenuOption[] {
     }) as NaiveUI.MenuOption[]
 }
 
-const homeRoute = router.getRoutes().find((route) => route.name === '主页')
-
-console.assert(homeRoute, '主页路由不存在')
-
-const menuProps = reactive({
-  mode: 'horizontal',
-  options: generateMenu(homeRoute!),
-  value: '',
-} satisfies ExtractPublicPropTypes<InstanceType<typeof SysHeader>['$props']>)
-
-watchEffect(() => {
-  menuProps.value = router.currentRoute.value.name as string
-})
-export default menuProps
+export default function useMenuProps() {
+  const homeRoute = router.getRoutes().find((route) => route.name === '主页')
+  console.assert(homeRoute, '主页路由不存在')
+  return reactive({
+    mode: 'horizontal',
+    options: generateMenu(homeRoute!),
+    value: router.currentRoute.value.name as string,
+  } satisfies ExtractPublicPropTypes<InstanceType<typeof SysHeader>['$props']>)
+}

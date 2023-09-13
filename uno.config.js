@@ -2,6 +2,7 @@ import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
 import transformerCompileClass from '@unocss/transformer-compile-class'
 import presetTagify from '@unocss/preset-tagify'
 import { presetExtra } from 'unocss-preset-extra'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
 
 export default defineConfig({
   // https://unocss.vercel.app/options
@@ -18,6 +19,9 @@ export default defineConfig({
       prefix: 'un-',
     }),
     presetExtra(),
+    presetScrollbar({
+      // config
+    }),
   ],
   transformers: [transformerCompileClass()],
 

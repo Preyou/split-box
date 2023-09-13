@@ -7,7 +7,7 @@
         'flex-row': direction === 'row',
         'flex-col': direction === 'column',
       }"
-      class="[&>*]:box-border] relative h-full w-full [&>*]:h-full [&>*]:w-full [&>*]:flex-auto"
+      class="[&>*]:box-border] relative h-full w-full [&>*]:h-full [&>*]:w-full"
     >
       <slot />
     </un-flex>

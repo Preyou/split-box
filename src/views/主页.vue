@@ -21,8 +21,10 @@
 </template>
 
 <script setup lang="ts">
-import sysHeaderProps from '@/withData/sysHeaderProps'
+import useMenuProps from '@/withData/sysHeaderProps'
 import sysMate from '@/components/systemEffect/SysMate.vue'
+
+const sysHeaderProps = useMenuProps()
 
 definePage({
   name: '主页',

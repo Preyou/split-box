@@ -1,6 +1,6 @@
 <template>
   <div
-    class="drag-none hover-line z-9999"
+    class="drag-none hover-line"
     :class="{
       'hover-line-hover': hoverable,
       'hover-line-horizontal': direction === 'row',
@@ -61,6 +61,7 @@ if (useDrag) {
 <style>
 .hover-line {
   flex: none;
+  z-index: 9999;
   background-color: v-bind('themeVars.dividerColor');
 }
 

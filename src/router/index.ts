@@ -5,7 +5,7 @@ export default createRouter({
   history: createWebHashHistory(),
   routes: [
     ...routes,
-    { path: '/:pathMatch(.*)*', redirect: '/' },
     { path: '/', redirect: '/主页' },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })

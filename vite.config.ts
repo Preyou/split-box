@@ -76,7 +76,7 @@ export default defineConfig({
     // }),
     UnoCSS(),
     Icons({
-      autoInstall: false,
+      autoInstall: process.env.NODE_ENV === 'development',
       compiler: 'vue3',
       jsx: 'preact',
     }),
@@ -112,7 +112,7 @@ export default defineConfig({
 
       // Change the import mode of page components. Can be 'async', 'sync', or a function with the following signature:
       // (filepath: string) => 'async' | 'sync'
-      importMode: 'async',
+      importMode: 'sync',
     }),
     VueMacros({
       setupBlock: true,
