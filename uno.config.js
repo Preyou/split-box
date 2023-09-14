@@ -12,7 +12,7 @@ export default defineConfig({
       prefix: 'un-',
     }),
     presetIcons({
-      autoInstall: true,
+      autoInstall: false,
       warn: true,
     }),
     presetTagify({

@@ -76,7 +76,7 @@ export default defineConfig({
     // }),
     UnoCSS(),
     Icons({
-      autoInstall: process.env.NODE_ENV === 'development',
+      autoInstall: true,
       compiler: 'vue3',
       jsx: 'preact',
     }),

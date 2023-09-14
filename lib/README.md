@@ -81,3 +81,7 @@
 ## 使用示例
 
 [点此访问](http://103.200.29.128:32768/split-box)
+
+## 开源地址
+
+[github](https://github.com/Preyou/split-box)
