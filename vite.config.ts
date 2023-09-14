@@ -228,7 +228,6 @@ export default defineConfig({
       },
       markdownItSetup(md) {
         // add anchor links to your H[x] tags
-        // add code syntax highlighting with Prism
         md.use(MarkdownItHighlightjs)
       },
     }),
