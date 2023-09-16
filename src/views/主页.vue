@@ -49,7 +49,7 @@ definePage({
 .hover-line-hover:active {
   background-color: v-bind('themeVars.primaryColorHover');
 }
-.win-box {
-  --thickness: 50px;
+.split-box {
+  --thickness: 5px;
 }
 </style>

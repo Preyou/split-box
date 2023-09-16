@@ -1,5 +1,5 @@
 <template>
-  <div class="win-box relative h-full w-full overflow-hidden">
+  <div class="split-box relative h-full w-full overflow-hidden">
     <un-flex
       v-bind="$attrs"
       ref="containerRef"
@@ -7,7 +7,7 @@
         'flex-row': direction === 'row',
         'flex-col': direction === 'column',
       }"
-      class="[&>*]:box-border] relative h-full w-full [&>*]:h-full [&>*]:w-full"
+      class="relative h-full w-full [&>*]:box-border [&>*]:h-full [&>*]:w-full"
     >
       <slot />
     </un-flex>
@@ -28,15 +28,10 @@ import {
   syncRef,
   useCssVar,
   useElementSize,
-  useCurrentElement,
   useMutationObserver,
 } from '@vueuse/core'
 import { ExtractPublicPropTypes, EffectScope, Ref } from 'vue'
 import HoverLine from './HoverLine.vue'
-
-const thickness = useCssVar(`--thickness`, useCurrentElement() as Ref, {
-  initialValue: '5px',
-})
 
 type HoverLineProps = ExtractPublicPropTypes<
   InstanceType<typeof HoverLine>['$props']
@@ -124,11 +119,6 @@ function getBounding(node?: HTMLElement) {
 function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
   let left = 0
   let top = 0
-  // if (direction.value === 'column') {
-  //   top -= thickness / 2
-  // } else {
-  //   left -= thickness / 2
-  // }
 
   const arr = Array.from(nodes ?? [])
     .filter((node): node is HTMLElement => node instanceof HTMLElement)
@@ -318,10 +308,11 @@ useMutationObserver(containerRef, reset, { childList: true })
 </script>
 
 <style>
-.win-box {
+.split-box {
   --thickness: 5px;
-  &:has(.hover-line:active) {
-    user-select: none;
-  }
+}
+
+.split-box :has(.hover-line:active) {
+  user-select: none;
 }
 </style>

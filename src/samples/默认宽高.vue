@@ -11,7 +11,7 @@
     <split-box>
       <use-element-size
         v-slot="{ width, height }"
-        class="w-200px flex flex-none flex-col items-center justify-center bg-green-500 text-[2em]"
+        class="w-200px flex flex-col items-center justify-center bg-green-500 text-[2em]"
       >
         <span>默认宽: 200px </span>
         <span>宽: {{ width }}</span>
@@ -29,5 +29,13 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * 直接用css给子元素设置宽高就相当于指定了默认宽高，但是要注意，因为split-box是flex布局，所以子元素的宽高会被压缩或拉伸，如果你不希望子元素被压缩或拉伸，可以给子元素设置flex: none;
+ */
+
 import SplitBox from '@headerless/split-box'
+// import SplitBox from '@lib/dist/index.js'
+// import '@lib/dist/style.css'
+
+import { UseElementSize } from '@vueuse/components'
 </script>
