@@ -17,20 +17,6 @@
 
 <script setup lang="ts">
 import { useDark } from '@vueuse/core'
-import { useThemeVars } from 'naive-ui'
-
-const themeVars = useThemeVars()
 
 const isDark = useDark()
 </script>
-
-<style>
-.hover-line {
-  background-color: v-bind('themeVars.dividerColor');
-}
-
-.hover-line-hover:hover,
-.hover-line-hover:active {
-  background-color: v-bind('themeVars.primaryColorHover');
-}
-</style>

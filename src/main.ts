@@ -6,6 +6,7 @@ import router from './router/index'
 import SvgIcon from '~virtual/svg-component'
 import 'virtual:uno.css'
 import '@/asset/globalStyle.css'
+import '@headerless/split-box/style.css'
 
 if (import.meta.env.DEV) {
   openCodeClient.init()

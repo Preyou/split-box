@@ -23,13 +23,14 @@
   "author": "阳文虎",
   "scripts": {
     "dev": "vite",
+    "dev force": "vite --force",
     "build": "node --max_old_space_size=16384 ./node_modules/vite/bin/vite.js build",
     "remove node_modules": "rimraf node_modules",
     "up latest": "pnpm up",
     "publish": "cd ./lib && npm --registry https://registry.npmjs.org publish --access public"
   },
   "dependencies": {
-    "@headerless/split-box": "^0.1.1",
+    "@headerless/split-box": "^0.2.0",
     "@vue/repl": "^2.5.8",
     "@vueuse/components": "^10.4.1",
     "@vueuse/core": "^10.4.1",

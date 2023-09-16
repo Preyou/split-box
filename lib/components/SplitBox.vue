@@ -317,7 +317,7 @@ onMounted(() => {
 useMutationObserver(containerRef, reset, { childList: true })
 </script>
 
-<style scoped>
+<style>
 .win-box {
   --thickness: 5px;
   &:has(.hover-line:active) {

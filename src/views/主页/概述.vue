@@ -13,7 +13,6 @@
 import ReadMe from '@lib/README.md'
 
 import SplitBox from '@headerless/split-box'
-import '@headerless/split-box/style.css'
 import VueComp from '@/samples/概述.vue'
 // import ReadMe from '@headerless/split-box/README.md'
 

@@ -24,8 +24,11 @@
 </template>
 
 <script setup lang="ts">
+import { useThemeVars } from 'naive-ui'
 import useMenuProps from '@/withData/sysHeaderProps'
 import sysMate from '@/components/systemEffect/SysMate.vue'
+
+const themeVars = useThemeVars()
 
 const sysHeaderProps = useMenuProps()
 
@@ -36,3 +39,17 @@ definePage({
   },
 })
 </script>
+
+<style>
+.hover-line {
+  background-color: v-bind('themeVars.dividerColor');
+}
+
+.hover-line-hover:hover,
+.hover-line-hover:active {
+  background-color: v-bind('themeVars.primaryColorHover');
+}
+.win-box {
+  --thickness: 50px;
+}
+</style>
