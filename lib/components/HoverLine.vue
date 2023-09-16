@@ -12,11 +12,8 @@
 
 <script setup lang="ts">
 import { useCurrentElement } from '@vueuse/core'
-import { useThemeVars } from 'naive-ui'
 import { CSSProperties } from 'vue'
 import { useDragEvent, useDragEventOptions } from '../hooks'
-
-const themeVars = useThemeVars()
 
 const {
   direction = 'none',
@@ -60,12 +57,12 @@ if (useDrag) {
 .hover-line {
   flex: none;
   z-index: 9999;
-  background-color: v-bind('themeVars.dividerColor');
+  background-color: rgba(255, 255, 255, 0.09);
 }
 
 .hover-line-hover:hover,
 .hover-line-hover:active {
-  background-color: v-bind('themeVars.primaryColorHover');
+  background-color: #7fe7c4;
 }
 
 .hover-line-horizontal {
