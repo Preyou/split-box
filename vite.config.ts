@@ -112,7 +112,7 @@ export default defineConfig({
 
       // Change the import mode of page components. Can be 'async', 'sync', or a function with the following signature:
       // (filepath: string) => 'async' | 'sync'
-      importMode: 'sync',
+      importMode: 'async',
     }),
     VueMacros({
       setupBlock: true,

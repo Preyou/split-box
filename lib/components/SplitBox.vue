@@ -28,12 +28,15 @@ import {
   syncRef,
   useCssVar,
   useElementSize,
+  useCurrentElement,
   useMutationObserver,
 } from '@vueuse/core'
-import { ExtractPublicPropTypes, EffectScope } from 'vue'
+import { ExtractPublicPropTypes, EffectScope, Ref } from 'vue'
 import HoverLine from './HoverLine.vue'
 
-const thickness = 5
+const thickness = useCssVar(`--thickness`, useCurrentElement() as Ref, {
+  initialValue: '5px',
+})
 
 type HoverLineProps = ExtractPublicPropTypes<
   InstanceType<typeof HoverLine>['$props']
@@ -121,11 +124,11 @@ function getBounding(node?: HTMLElement) {
 function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
   let left = 0
   let top = 0
-  if (direction.value === 'column') {
-    top -= thickness / 2
-  } else {
-    left -= thickness / 2
-  }
+  // if (direction.value === 'column') {
+  //   top -= thickness / 2
+  // } else {
+  //   left -= thickness / 2
+  // }
 
   const arr = Array.from(nodes ?? [])
     .filter((node): node is HTMLElement => node instanceof HTMLElement)
@@ -192,11 +195,16 @@ function nodes2hoverLineArr(nodes?: HTMLCollection): HoverLineProps[] {
       return {
         direction: direction.value === 'column' ? 'row' : 'column',
         hoverable: true,
-        thickness: `${thickness}px`,
-        style: {
-          left: `${left}px`,
-          top: `${top}px`,
-        },
+        style:
+          direction.value === 'column'
+            ? {
+                left: `${left}px`,
+                top: `calc(${top}px - var(--thickness) / 2)`,
+              }
+            : {
+                left: `calc(${left}px - var(--thickness) / 2)`,
+                top: `calc(${top}px)`,
+              },
         useDrag: {
           container: containerRef,
         },
@@ -311,32 +319,9 @@ useMutationObserver(containerRef, reset, { childList: true })
 
 <style scoped>
 .win-box {
-  --thickness: calc(v-bind(`-${thickness}`) / 2 * 1px);
+  --thickness: 5px;
   &:has(.hover-line:active) {
     user-select: none;
-  }
-  .top-hover-line {
-    position: absolute;
-    top: var(--thickness);
-    left: 0;
-  }
-
-  .right-hover-line {
-    position: absolute;
-    top: 0;
-    right: var(--thickness);
-  }
-
-  .bottom-hover-line {
-    position: absolute;
-    bottom: var(--thickness);
-    left: 0;
-  }
-
-  .left-hover-line {
-    position: absolute;
-    top: 0;
-    left: var(--thickness);
   }
 }
 </style>

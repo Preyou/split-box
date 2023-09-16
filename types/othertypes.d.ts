@@ -12,9 +12,11 @@ declare global {
 }
 declare module 'vue-router' {
   interface RouteMeta {
-    // // 是可选的
-    // isAdmin?: boolean
-    // // 每个路由都必须声明
-    // requiresAuth: boolean
+    /** 显示的标题，如果没有则取路由的name */
+    title?: string
+    /** 是否在自动构造的菜单上隐藏 */
+    hidden?: boolean
+    /** 自动构造时同一级菜单的排序 */
+    order?: number
   }
 }

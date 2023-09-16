@@ -1,7 +1,7 @@
 <template>
   <code-block
-    persistent-copy-button
     highlightjs
+    persistent-copy-button
     lang="html"
     height="100%"
     :theme="isDark ? 'atom-one-dark' : 'atom-one-light'"

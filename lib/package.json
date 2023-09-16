@@ -1,6 +1,6 @@
 {
   "name": "@headerless/split-box",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "可能是用起来最简单的分屏组件\nThe simplest split-screen component to use, perhaps.",
   "main": "index.js",
   "type": "module",
@@ -19,10 +19,13 @@
     "./style.css": "./dist/style.css",
     "./README.md": "./README.md"
   },
-  "homepage": "",
+  "homepage": "http://103.200.29.128:32768/split-box/#/%E4%B8%BB%E9%A1%B5/%E6%A6%82%E8%BF%B0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Preyou/split-box"
+  },
+  "bugs": {
+    "url": "https://github.com/Preyou/split-box/issues"
   },
   "keywords": [
     "vue",

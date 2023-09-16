@@ -29,7 +29,7 @@
     "publish": "cd ./lib && npm --registry https://registry.npmjs.org publish --access public"
   },
   "dependencies": {
-    "@headerless/split-box": "^0.0.4",
+    "@headerless/split-box": "^0.1.1",
     "@vue/repl": "^2.5.8",
     "@vueuse/components": "^10.4.1",
     "@vueuse/core": "^10.4.1",

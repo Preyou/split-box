@@ -21,13 +21,11 @@ const themeVars = useThemeVars()
 const {
   direction = 'none',
   hoverable = true,
-  thickness = '5px',
   useDrag = true,
   style = {},
 } = $defineProps<{
   direction?: 'row' | 'column' | 'none'
   hoverable?: boolean
-  thickness?: string
   useDrag?: useDragEventOptions
   style?: CSSProperties
 }>()
@@ -72,11 +70,12 @@ if (useDrag) {
 
 .hover-line-horizontal {
   width: 100%;
-  height: v-bind(thickness);
+  height: var(--thickness);
 }
 
 .hover-line-vertical {
-  width: v-bind(thickness);
+  width: var(--thickness);
   height: 100%;
+  width: calc();
 }
 </style>

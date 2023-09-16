@@ -7,6 +7,7 @@ import router from '@/router'
 function generateMenu(route: RouteRecordRaw): NaiveUI.MenuOption[] {
   return route.children
     ?.filter(({ meta }) => !meta?.hidden)
+    .sort((a, b) => (a.meta?.order ?? 0) - (b.meta?.order ?? 0))
     .map((child) => {
       return {
         label: () => (
