@@ -7,7 +7,7 @@
         'flex-row': direction === 'row',
         'flex-col': direction === 'column',
       }"
-      class="relative h-full w-full [&>*]:box-border [&>*]:h-full [&>*]:w-full"
+      class="relative h-full w-full [&>*]:box-border layer-split:[&>*]:(h-full w-full flex-auto)"
     >
       <slot />
     </un-flex>
@@ -308,11 +308,13 @@ useMutationObserver(containerRef, reset, { childList: true })
 </script>
 
 <style>
-.split-box {
-  --thickness: 5px;
-}
+@layer split {
+  .split-box {
+    --thickness: 5px;
+  }
 
-.split-box :has(.hover-line:active) {
-  user-select: none;
+  .split-box :has(.hover-line:active) {
+    user-select: none;
+  }
 }
 </style>

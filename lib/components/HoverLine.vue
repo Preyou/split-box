@@ -54,25 +54,27 @@ if (useDrag) {
 </script>
 
 <style>
-.hover-line {
-  flex: none;
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.09);
-}
+@layer split {
+  .hover-line {
+    flex: none;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.09);
+  }
 
-.hover-line-hover:hover,
-.hover-line-hover:active {
-  background-color: #7fe7c4;
-}
+  .hover-line-hover:hover,
+  .hover-line-hover:active {
+    background-color: #7fe7c4;
+  }
 
-.hover-line-horizontal {
-  width: 100%;
-  height: var(--thickness);
-}
+  .hover-line-horizontal {
+    width: 100%;
+    height: var(--thickness);
+  }
 
-.hover-line-vertical {
-  width: var(--thickness);
-  height: 100%;
-  width: calc();
+  .hover-line-vertical {
+    width: var(--thickness);
+    height: 100%;
+    width: calc();
+  }
 }
 </style>
