@@ -11,6 +11,9 @@ import VueComp from '@/samples/上下分屏.vue'
 import code from '@/samples/上下分屏.vue?raw'
 
 definePage({
-  name: '上下分屏',
+  meta: {
+    title: '上下分屏',
+    order: 1,
+  },
 })
 </script>

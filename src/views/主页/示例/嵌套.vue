@@ -11,6 +11,9 @@ import VueComp from '@/samples/嵌套.vue'
 import code from '@/samples/嵌套.vue?raw'
 
 definePage({
-  name: '嵌套',
+  meta: {
+    title: '嵌套',
+    order: 3,
+  },
 })
 </script>

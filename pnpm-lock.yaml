@@ -11,8 +11,8 @@ patchedDependencies:
 
 dependencies:
   '@headerless/split-box':
-    specifier: ^0.2.4
-    version: registry.npmmirror.com/@headerless/split-box@0.2.4(vue@3.3.4)
+    specifier: ^0.2.71
+    version: registry.npmmirror.com/@headerless/split-box@0.2.71(vue@3.3.4)
   '@vue/repl':
     specifier: ^2.5.8
     version: registry.npmmirror.com/@vue/repl@2.5.8
@@ -78,6 +78,9 @@ devDependencies:
   '@unocss/transformer-compile-class':
     specifier: ^0.51.13
     version: registry.npmmirror.com/@unocss/transformer-compile-class@0.51.13
+  '@unocss/transformer-variant-group':
+    specifier: ^0.55.7
+    version: registry.npmmirror.com/@unocss/transformer-variant-group@0.55.7
   '@vitejs/plugin-vue':
     specifier: ^4.3.4
     version: registry.npmmirror.com/@vitejs/plugin-vue@4.3.4(vite@4.4.9)(vue@3.3.4)
@@ -1090,11 +1093,11 @@ packages:
     version: 1.0.8
     dev: true
 
-  registry.npmmirror.com/@headerless/split-box@0.2.4(vue@3.3.4):
-    resolution: {integrity: sha512-soZo+9Y9GN80NF2MuWn7XX+wGfyGuKlyxTZhNLcW66vXDxxIwvAszj3taFqE8gZMp4CN1OHE72uhA0o3UfIcEg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@headerless/split-box/-/split-box-0.2.4.tgz}
-    id: registry.npmmirror.com/@headerless/split-box/0.2.4
+  registry.npmmirror.com/@headerless/split-box@0.2.71(vue@3.3.4):
+    resolution: {integrity: sha512-DJC5iiEtCtX5fOBcHAHTIcsZ+Aiz/8biPUEB0X0NPNPLbvMFQ1dkPyNETlOxGskeH5KHFaREbBLUWSOpffEBPw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@headerless/split-box/-/split-box-0.2.71.tgz}
+    id: registry.npmmirror.com/@headerless/split-box/0.2.71
     name: '@headerless/split-box'
-    version: 0.2.4
+    version: 0.2.71
     dependencies:
       '@vueuse/core': registry.npmmirror.com/@vueuse/core@10.4.1(vue@3.3.4)
     transitivePeerDependencies:
@@ -2081,6 +2084,12 @@ packages:
     version: 0.51.13
     dev: true
 
+  registry.npmmirror.com/@unocss/core@0.55.7:
+    resolution: {integrity: sha512-c+bWe844Xjlwc1EPwHj0+n3LpntJG7ELPbEOOxNIG+CQdcEX0l1G0rkM8+nKstJ9WJmgpf1HdJQLVMF62HXvhw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@unocss/core/-/core-0.55.7.tgz}
+    name: '@unocss/core'
+    version: 0.55.7
+    dev: true
+
   registry.npmmirror.com/@unocss/eslint-config@0.51.13(eslint@8.49.0)(typescript@5.0.2):
     resolution: {integrity: sha512-x5wmPi112y0LeYgNFWA3E1ZERho2WvMVkX4G2VwKVTJNJuADfR2QY1Syax1nWef2K1DFmKijsE/MmG93SJXIUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@unocss/eslint-config/-/eslint-config-0.51.13.tgz}
     id: registry.npmmirror.com/@unocss/eslint-config/0.51.13
@@ -2406,6 +2415,14 @@ packages:
     version: 0.51.13
     dependencies:
       '@unocss/core': registry.npmmirror.com/@unocss/core@0.51.13
+    dev: true
+
+  registry.npmmirror.com/@unocss/transformer-variant-group@0.55.7:
+    resolution: {integrity: sha512-uLyZ08XXVriUDenZCTGA3xGgMD3B9GVr6mSz002pDlLpQDi8FcMQTOGg8X4ViCGzS3l03S/+r+JY7kJTpMFa9w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@unocss/transformer-variant-group/-/transformer-variant-group-0.55.7.tgz}
+    name: '@unocss/transformer-variant-group'
+    version: 0.55.7
+    dependencies:
+      '@unocss/core': registry.npmmirror.com/@unocss/core@0.55.7
     dev: true
 
   registry.npmmirror.com/@unocss/vite@0.47.6(rollup@3.29.1)(vite@4.4.9):

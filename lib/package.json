@@ -1,7 +1,7 @@
 {
   "name": "@headerless/split-box",
-  "version": "0.2.4",
-  "description": "可能是用起来最简单的分屏组件\nThe simplest split-screen component to use, perhaps.",
+  "version": "0.2.71",
+  "description": "使用纯CSS控制行为的分屏组件.",
   "main": "index.js",
   "type": "module",
   "module": "dist/index.js",

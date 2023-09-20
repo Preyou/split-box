@@ -3,6 +3,7 @@ import transformerCompileClass from '@unocss/transformer-compile-class'
 import presetTagify from '@unocss/preset-tagify'
 import { presetExtra } from 'unocss-preset-extra'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
+import transformerVariantGroup from '@unocss/transformer-variant-group'
 
 export default defineConfig({
   // https://unocss.vercel.app/options
@@ -23,7 +24,7 @@ export default defineConfig({
       // config
     }),
   ],
-  transformers: [transformerCompileClass()],
+  transformers: [transformerCompileClass(),transformerVariantGroup()],
 
   shortcuts: [
     // you could still have object style
@@ -32,5 +33,13 @@ export default defineConfig({
     // },
     // // dynamic shortcuts
     // [/^flex(-(row|col))?(-)?$/, ([a, , c]) => `flex flex-col`],
+  ],
+  rules: [
+    // css变量
+    [/^(\$((\w|-)+))-(\[(.+)\])$/, (match) => {
+      let obj = {}
+      obj[`--${match[2]}`] = match[5]
+      return obj
+    }],
   ],
 })

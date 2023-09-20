@@ -1,13 +1,13 @@
 <template>
   <div class="split-box relative h-full w-full overflow-hidden">
     <un-flex
-      v-bind="$attrs"
       ref="containerRef"
+      v-bind="$attrs"
       :class="{
         'flex-row': direction === 'row',
         'flex-col': direction === 'column',
       }"
-      class="relative h-full w-full [&>*]:box-border layer-split:[&>*]:(h-full w-full flex-auto)"
+      class="relative h-full w-full layer-split:[&>*]:(box-border h-full w-full)"
     >
       <slot />
     </un-flex>

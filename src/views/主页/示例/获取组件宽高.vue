@@ -7,15 +7,13 @@
 
 <script setup lang="ts">
 import SplitBox from '@headerless/split-box'
-import VueComp from '@/samples/内部测试.vue'
-import code from '@/samples/内部测试.vue?raw'
+import VueComp from '@/samples/获取组件宽度.vue'
+import code from '@/samples/获取组件宽度.vue?raw'
 
 definePage({
-  name: '内部测试',
   meta: {
-    title: '内部测试',
-    hidden: false,
-    order: -1,
+    title: '获取组件宽度',
+    order: 4,
   },
 })
 </script>

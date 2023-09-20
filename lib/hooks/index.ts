@@ -33,7 +33,7 @@ export function useDragEvent(
   }>()
   tryOnMounted(() => {
     const targetElement = unrefElement(target)!
-    console.assert(targetElement, 'target element is not found')
+    console.assert(!!targetElement, 'target element is not found')
 
     const initX = getComputedStyle(targetElement).left
 

@@ -12,5 +12,8 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * 使用css样式`flex-direction`属性来指定子元素的排列方向
+ */
 import SplitBox from '@headerless/split-box'
 </script>

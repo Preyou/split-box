@@ -24,9 +24,9 @@ export default function useMenuProps() {
   const homeRoute = router.getRoutes().find((route) => route.name === '主页')
   console.assert(homeRoute, '主页路由不存在')
 
-  return reactive({
+  return {
     mode: 'horizontal',
     options: generateMenu(homeRoute!),
     defaultValue: router.currentRoute.value.name as string,
-  } satisfies ExtractPublicPropTypes<InstanceType<typeof SysHeader>['$props']>)
+  } satisfies ExtractPublicPropTypes<InstanceType<typeof SysHeader>['$props']>
 }
