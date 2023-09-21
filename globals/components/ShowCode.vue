@@ -6,6 +6,7 @@
     height="100%"
     :theme="isDark ? 'atom-one-dark' : 'atom-one-light'"
     :code-block-radius="0"
+    class="[&_*]:whitespace-pre-wrap"
   />
 </template>
 <script setup lang="ts">

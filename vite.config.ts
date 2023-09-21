@@ -230,7 +230,7 @@ export default defineConfig({
         // add anchor links to your H[x] tags
         md.use(MarkdownItHighlightjs)
       },
-      builders: [code(), meta(), link()],
+      // builders: [code(), meta(), link()],
     }),
     // VueDevTools(),
   ],
