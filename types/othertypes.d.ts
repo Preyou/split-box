@@ -20,3 +20,10 @@ declare module 'vue-router' {
     order?: number
   }
 }
+
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    SplitBox: typeof import('@headerless/split-box').default
+    highlightjs: typeof import('@highlightjs/vue-plugin').default.component
+  }
+}

@@ -1,12 +1,15 @@
 import '@/utils/initConfig'
+import 'virtual:uno.css'
+import '@/asset/globalStyle.css'
+import '@headerless/split-box/style.css'
+
+import 'highlight.js/lib/common'
+import hljsVuePlugin from '@highlightjs/vue-plugin'
 /* @ts-ignore * */
 import { openCodeClient } from '@guijixing/vue-code-link'
 import App from './App.vue'
 import router from './router/index'
 import SvgIcon from '~virtual/svg-component'
-import 'virtual:uno.css'
-import '@/asset/globalStyle.css'
-import '@headerless/split-box/style.css'
 
 if (import.meta.env.DEV) {
   openCodeClient.init()
@@ -15,6 +18,7 @@ if (import.meta.env.DEV) {
 const app = createApp(App)
   .use(createPinia())
   .use(router)
+  .use(hljsVuePlugin)
   .component(SvgIcon.name, SvgIcon)
 
 app.config.warnHandler = (msg, instance, trace) => {

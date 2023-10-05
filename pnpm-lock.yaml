@@ -13,6 +13,9 @@ dependencies:
   '@headerless/split-box':
     specifier: ^0.2.71
     version: registry.npmmirror.com/@headerless/split-box@0.2.71(vue@3.3.4)
+  '@highlightjs/vue-plugin':
+    specifier: ^2.1.0
+    version: registry.npmmirror.com/@highlightjs/vue-plugin@2.1.0(highlight.js@11.8.0)(vue@3.3.4)
   '@vue/repl':
     specifier: ^2.5.8
     version: registry.npmmirror.com/@vue/repl@2.5.8
@@ -1103,6 +1106,19 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
+
+  registry.npmmirror.com/@highlightjs/vue-plugin@2.1.0(highlight.js@11.8.0)(vue@3.3.4):
+    resolution: {integrity: sha512-E+bmk4ncca+hBEYRV2a+1aIzIV0VSY/e5ArjpuSN9IO7wBJrzUE2u4ESCwrbQD7sAy+jWQjkV5qCCWgc+pu7CQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@highlightjs/vue-plugin/-/vue-plugin-2.1.0.tgz}
+    id: registry.npmmirror.com/@highlightjs/vue-plugin/2.1.0
+    name: '@highlightjs/vue-plugin'
+    version: 2.1.0
+    peerDependencies:
+      highlight.js: ^11.0.1
+      vue: ^3
+    dependencies:
+      highlight.js: registry.npmmirror.com/highlight.js@11.8.0
+      vue: registry.npmmirror.com/vue@3.3.4
     dev: false
 
   registry.npmmirror.com/@humanwhocodes/config-array@0.11.11:
