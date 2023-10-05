@@ -28,24 +28,15 @@ dependencies:
   highlight.js:
     specifier: ^11.8.0
     version: registry.npmmirror.com/highlight.js@11.8.0
-  markdown-it-highlightjs:
-    specifier: ^4.0.1
-    version: registry.npmmirror.com/markdown-it-highlightjs@4.0.1
   naive-ui:
     specifier: ^2.34.4
     version: registry.npmmirror.com/naive-ui@2.34.4(vue@3.3.4)
   pinia:
     specifier: ^2.1.6
     version: registry.npmmirror.com/pinia@2.1.6(typescript@5.0.2)(vue@3.3.4)
-  simple-code-editor:
-    specifier: ^2.0.8
-    version: registry.npmmirror.com/simple-code-editor@2.0.8
   vue-router:
     specifier: ^4.2.4
     version: registry.npmmirror.com/vue-router@4.2.4(patch_hash=wlvgzndkayjladmz5aevfeommq)(vue@3.3.4)
-  vue3-code-block:
-    specifier: ^2.2.12
-    version: registry.npmmirror.com/vue3-code-block@2.2.12
 
 devDependencies:
   '@guijixing/vue-code-link':
@@ -147,6 +138,9 @@ devDependencies:
   eslint-plugin-vue:
     specifier: ^9.17.0
     version: registry.npmmirror.com/eslint-plugin-vue@9.17.0(eslint@8.49.0)
+  markdown-it-highlightjs:
+    specifier: ^4.0.1
+    version: registry.npmmirror.com/markdown-it-highlightjs@4.0.1
   md-powerpack:
     specifier: ^1.0.3
     version: registry.npmmirror.com/md-powerpack@1.0.3(@vitejs/plugin-vue@4.3.4)(fp-ts@2.16.1)(markdown-it@13.0.1)(rollup@3.29.1)(vite-plugin-md@0.21.5)(vite@4.4.9)
@@ -6731,7 +6725,6 @@ packages:
     name: highlight.js
     version: 11.8.0
     engines: {node: '>=12.0.0'}
-    dev: false
 
   registry.npmmirror.com/hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz}
@@ -8089,7 +8082,7 @@ packages:
     version: 4.0.1
     dependencies:
       highlight.js: registry.npmmirror.com/highlight.js@11.8.0
-    dev: false
+    dev: true
 
   registry.npmmirror.com/markdown-it@13.0.1:
     resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/markdown-it/-/markdown-it-13.0.1.tgz}
@@ -9573,6 +9566,7 @@ packages:
     name: prismjs
     version: 1.29.0
     engines: {node: '>=6'}
+    dev: true
 
   registry.npmmirror.com/progress@2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/progress/-/progress-2.0.3.tgz}
@@ -10809,14 +10803,6 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  registry.npmmirror.com/simple-code-editor@2.0.8:
-    resolution: {integrity: sha512-Arsq1nhs2VUDBwybrvEA4LjkVBXww2L8t2x9AHGATRVKD+sYa+EsMzTnEpBy5w39CEYnbreD0OreuptA6b9oUQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/simple-code-editor/-/simple-code-editor-2.0.8.tgz}
-    name: simple-code-editor
-    version: 2.0.8
-    dependencies:
-      highlight.js: registry.npmmirror.com/highlight.js@11.8.0
-    dev: false
-
   registry.npmmirror.com/sirv@2.0.3:
     resolution: {integrity: sha512-O9jm9BsID1P+0HOi81VpXPoDxYP374pkOLzACAoyUQ/3OUVndNpsz6wMnY2z+yOxzbllCKZrM+9QrWsv4THnyA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sirv/-/sirv-2.0.3.tgz}
     name: sirv
@@ -11954,12 +11940,6 @@ packages:
     engines: {node: '>=12.20'}
     hasBin: true
     dev: true
-
-  registry.npmmirror.com/ua-parser-js@1.0.36:
-    resolution: {integrity: sha512-znuyCIXzl8ciS3+y3fHJI/2OhQIXbXw9MWC/o3qwyR+RGppjZHrM27CGFSKCJXi2Kctiz537iOu2KnXs1lMQhw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ua-parser-js/-/ua-parser-js-1.0.36.tgz}
-    name: ua-parser-js
-    version: 1.0.36
-    dev: false
 
   registry.npmmirror.com/uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/uc.micro/-/uc.micro-1.0.6.tgz}
@@ -13211,17 +13191,6 @@ packages:
       semver: registry.npmmirror.com/semver@7.5.4
       typescript: registry.npmmirror.com/typescript@5.0.2
     dev: true
-
-  registry.npmmirror.com/vue3-code-block@2.2.12:
-    resolution: {integrity: sha512-tvpr1GJDv7Zfln7I56U/OHUlgHQeVWpeyEictgedZV4EIQzsdXfTKmi8jCHpkEmMm9wq4iSN1qpUUZVd8eATtg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue3-code-block/-/vue3-code-block-2.2.12.tgz}
-    name: vue3-code-block
-    version: 2.2.12
-    dependencies:
-      highlight.js: registry.npmmirror.com/highlight.js@11.8.0
-      prismjs: registry.npmmirror.com/prismjs@1.29.0
-      ua-parser-js: registry.npmmirror.com/ua-parser-js@1.0.36
-      vue: registry.npmmirror.com/vue@3.3.4
-    dev: false
 
   registry.npmmirror.com/vue@3.3.4:
     resolution: {integrity: sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue/-/vue-3.3.4.tgz}

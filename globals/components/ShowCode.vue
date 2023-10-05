@@ -23,7 +23,7 @@ import { useDark } from '@vueuse/core'
 import atomOneDark from 'highlight.js/styles/atom-one-dark.css?url'
 import atomOneLight from 'highlight.js/styles/atom-one-light.css?url'
 
-const { language = 'html', code } = $defineProps<{
+const { language = 'xml', code } = $defineProps<{
   code: string
   language?: string
 }>()

@@ -37,12 +37,9 @@
     "@vueuse/components": "^10.4.1",
     "@vueuse/core": "^10.4.1",
     "highlight.js": "^11.8.0",
-    "markdown-it-highlightjs": "^4.0.1",
     "naive-ui": "^2.34.4",
     "pinia": "^2.1.6",
-    "simple-code-editor": "^2.0.8",
-    "vue-router": "^4.2.4",
-    "vue3-code-block": "^2.2.12"
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@guijixing/vue-code-link": "^1.0.8",
@@ -78,6 +75,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-regexp": "^1.15.0",
     "eslint-plugin-vue": "^9.17.0",
+    "markdown-it-highlightjs": "^4.0.1",
     "md-powerpack": "^1.0.3",
     "postcss-html": "^1.5.0",
     "prettier": "^2.8.8",
