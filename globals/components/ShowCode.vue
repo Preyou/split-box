@@ -1,5 +1,5 @@
 <template>
-  <use-element-size v-slot="{ width = 0, height = 0 }">
+  <use-element-size v-slot="{ height = 0 }">
     <n-scrollbar x-scrollable class="h-full w-full">
       <link
         rel="stylesheet"
@@ -8,7 +8,8 @@
       />
       <highlightjs
         v-bind="$attrs"
-        :style="{ minWidth: width + 'px', minHeight: height + 'px' }"
+        class="w-full flex flex-col"
+        :style="{ width: '100%', minHeight: height + 'px' }"
         :language="language"
         :autodetect="false"
         :code="code"
@@ -29,3 +30,11 @@ const { language = 'html', code } = $defineProps<{
 
 const isDark = useDark()
 </script>
+<style>
+.hljs {
+  width: 100%;
+  height: 100%;
+  white-space: pre-wrap;
+  flex: auto;
+}
+</style>
